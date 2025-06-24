@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App - Project Detail</title>
+    <link rel="stylesheet" href="./css/project-detail.css">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="nav-back">← Back to Portfolio</a>
+            <h1 class="nav-title">BathDream (밭드림)</h1>
+        </div>
+    </nav>
+
+    <!-- 프로젝트 헤더 -->
+    <header class="project-header">
+        <div class="header-container">
+            <div class="project-hero">
+                <img src="./image/project2.jpg" alt="BathDream (밭드림)" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=BathDream'">
+                <div class="hero-overlay">
+                    <h1>BathDream (밭드림)</h1>
+                    <p>팀 협업을 위한 프로젝트 관리 애플리케이션</p>
+                    <div class="tech-stack">
+                        <span>Vue.js</span>
+                        <span>Express</span>
+                        <span>PostgreSQL</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 프로젝트 상세 내용 -->
+    <main class="project-content">
+        <div class="content-container">
+            <!-- 기획 섹션 -->
+            <section class="project-section" id="planning">
+                <div class="section-header" onclick="toggleGallery('planning-gallery')">
+                    <h2>📋 기획 (Planning)</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- 기획 이미지 갤러리 -->
+                <div class="image-gallery" id="planning-gallery">
+                    <button class="gallery-close" onclick="closeGallery('planning-gallery')">×</button>
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide">
+                                <img src="./image/planning1.jpg" alt="기획 문서" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Planning+Document+1'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/planning2.jpg" alt="사용자 페르소나" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=User+Persona'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/planning3.jpg" alt="기능 명세서" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Feature+Specification'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/planning4.jpg" alt="프로젝트 타임라인" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Project+Timeline'">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('planning-gallery', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('planning-gallery', 1)">›</button>
+                    </div>
+                    <div class="gallery-indicators">
+                        <div class="gallery-indicator active" onclick="goToSlide('planning-gallery', 0)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('planning-gallery', 1)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('planning-gallery', 2)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('planning-gallery', 3)"></div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="planning-grid">
+                        <div class="planning-item">
+                            <h3>프로젝트 목표</h3>
+                            <p>팀원 간 효율적인 작업 분배와 진행 상황 추적을 통한 프로젝트 완성도 향상</p>
+                            <button class="detail-btn" onclick="window.open('./planning-detail.html?section=goal', '_blank')">자세히보기</button>
+                        </div>
+                        <div class="planning-item">
+                            <h3>타겟 사용자</h3>
+                            <p>소규모 팀(5-20명)의 프로젝트 매니저 및 개발자, 디자이너</p>
+                            <button class="detail-btn" onclick="window.open('./planning-detail.html?section=target', '_blank')">자세히보기</button>
+                        </div>
+                        <div class="planning-item">
+                            <h3>핵심 기능</h3>
+                            <ul>
+                                <li>태스크 생성 및 할당</li>
+                                <li>실시간 진행 상황 추적</li>
+                                <li>팀원 간 커뮤니케이션</li>
+                                <li>프로젝트 타임라인 관리</li>
+                            </ul>
+                            <button class="detail-btn" onclick="window.open('./planning-detail.html?section=features', '_blank')">자세히보기</button>
+                        </div>
+                        <div class="planning-item">
+                            <h3>기술적 요구사항</h3>
+                            <ul>
+                                <li>실시간 데이터 동기화</li>
+                                <li>반응형 웹 애플리케이션</li>
+                                <li>권한 관리 시스템</li>
+                                <li>데이터 백업 및 복구</li>
+                            </ul>
+                            <button class="detail-btn" onclick="window.open('./planning-detail.html?section=tech', '_blank')">자세히보기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 디자인 섹션 -->
+            <section class="project-section" id="design">
+                <div class="section-header" onclick="toggleGallery('design-gallery')">
+                    <h2>🎨 디자인 (Design)</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- 디자인 이미지 갤러리 -->
+                <div class="image-gallery" id="design-gallery">
+                    <button class="gallery-close" onclick="closeGallery('design-gallery')">×</button>
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide">
+                                <img src="./image/design1.jpg" alt="디자인 목업" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Design+Mockup+1'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/design2.jpg" alt="UI 컴포넌트" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=UI+Components'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/design3.jpg" alt="색상 팔레트" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Color+Palette'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/design4.jpg" alt="반응형 디자인" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Responsive+Design'">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('design-gallery', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('design-gallery', 1)">›</button>
+                    </div>
+                    <div class="gallery-indicators">
+                        <div class="gallery-indicator active" onclick="goToSlide('design-gallery', 0)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('design-gallery', 1)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('design-gallery', 2)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('design-gallery', 3)"></div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="design-showcase">
+                        <div class="design-item">
+                            <h3>UI/UX 컨셉</h3>
+                            <p>칸반 보드 스타일의 직관적인 인터페이스로 복잡한 프로젝트를 시각적으로 관리할 수 있도록 설계</p>
+                            <div class="design-features">
+                                <div class="feature">
+                                    <span class="feature-icon">📋</span>
+                                    <span>칸반 보드 레이아웃</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">👥</span>
+                                    <span>팀 협업 중심 디자인</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">📊</span>
+                                    <span>진행률 시각화</span>
+                                </div>
+                            </div>
+                            <button class="detail-btn" onclick="window.open('./design-detail.html', '_blank')">🎨 자세히보기</button>
+                        </div>
+                        <div class="design-visual">
+                            <img src="./image/design2.jpg" alt="Design Mockup" onerror="this.src='https://via.placeholder.com/400x300/2a2a2a/ffffff?text=Design+Mockup'">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 개발 섹션 -->
+            <section class="project-section" id="development">
+                <div class="section-header" onclick="toggleGallery('development-gallery')">
+                    <h2>💻 개발 (Development)</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- 개발 이미지 갤러리 -->
+                <div class="image-gallery" id="development-gallery">
+                    <button class="gallery-close" onclick="closeGallery('development-gallery')">×</button>
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide">
+                                <img src="./image/dev1.jpg" alt="코드 구조" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Code+Architecture'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/dev2.jpg" alt="데이터베이스 설계" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Database+Design'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/dev3.jpg" alt="API 문서" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=API+Documentation'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/dev4.jpg" alt="배포 파이프라인" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Deployment+Pipeline'">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('development-gallery', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('development-gallery', 1)">›</button>
+                    </div>
+                    <div class="gallery-indicators">
+                        <div class="gallery-indicator active" onclick="goToSlide('development-gallery', 0)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('development-gallery', 1)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('development-gallery', 2)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('development-gallery', 3)"></div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="dev-details">
+                        <div class="dev-architecture">
+                            <h3>아키텍처</h3>
+                            <div class="architecture-diagram">
+                                <div class="layer">
+                                    <span>Frontend (Vue.js)</span>
+                                </div>
+                                <div class="layer">
+                                    <span>Backend (Express.js)</span>
+                                </div>
+                                <div class="layer">
+                                    <span>Database (PostgreSQL)</span>
+                                </div>
+                                <div class="layer">
+                                    <span>Container (Docker)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dev-features">
+                            <h3>주요 구현 기능</h3>
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <h4>태스크 관리</h4>
+                                    <p>칸반 보드를 통한 직관적인 태스크 관리 시스템</p>
+                                    <button class="detail-btn" onclick="window.open('./dev-detail.html?feature=task-management', '_blank')">자세히보기</button>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>실시간 협업</h4>
+                                    <p>WebSocket을 활용한 실시간 데이터 동기화</p>
+                                    <button class="detail-btn" onclick="window.open('./dev-detail.html?feature=real-time-collaboration', '_blank')">자세히보기</button>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>권한 관리</h4>
+                                    <p>역할 기반 접근 제어 시스템</p>
+                                    <button class="detail-btn" onclick="window.open('./dev-detail.html?feature=permission-management', '_blank')">자세히보기</button>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>데이터 분석</h4>
+                                    <p>프로젝트 진행 상황 및 팀 성과 분석</p>
+                                    <button class="detail-btn" onclick="window.open('./dev-detail.html?feature=data-analytics', '_blank')">자세히보기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 테스트 섹션 -->
+            <section class="project-section" id="testing">
+                <div class="section-header" onclick="toggleGallery('testing-gallery')">
+                    <h2>🧪 테스트 (Testing)</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- 테스트 이미지 갤러리 -->
+                <div class="image-gallery" id="testing-gallery">
+                    <button class="gallery-close" onclick="closeGallery('testing-gallery')">×</button>
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide">
+                                <img src="./image/test1.jpg" alt="테스트 계획" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Test+Plan'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/test2.jpg" alt="테스트 결과" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Test+Results'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/test3.jpg" alt="성능 테스트" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Performance+Test'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/test4.jpg" alt="사용자 테스트" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=User+Testing'">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('testing-gallery', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('testing-gallery', 1)">›</button>
+                    </div>
+                    <div class="gallery-indicators">
+                        <div class="gallery-indicator active" onclick="goToSlide('testing-gallery', 0)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('testing-gallery', 1)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('testing-gallery', 2)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('testing-gallery', 3)"></div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="testing-methods">
+                        <div class="test-item">
+                            <h3>단위 테스트</h3>
+                            <p>Vue Test Utils와 Jest를 사용한 컴포넌트 테스트</p>
+                            <div class="test-coverage">
+                                <span>커버리지: 88%</span>
+                            </div>
+                        </div>
+                        <div class="test-item">
+                            <h3>통합 테스트</h3>
+                            <p>API 엔드포인트 및 데이터베이스 연동 테스트</p>
+                            <div class="test-coverage">
+                                <span>성공률: 95%</span>
+                            </div>
+                        </div>
+                        <div class="test-item">
+                            <h3>사용자 테스트</h3>
+                            <p>실제 팀 환경에서의 사용성 및 워크플로우 테스트</p>
+                            <div class="test-coverage">
+                                <span>만족도: 4.7/5.0</span>
+                            </div>
+                        </div>
+                        <div class="test-item">
+                            <h3>성능 테스트</h3>
+                            <p>동시 접속자 및 대용량 데이터 처리 테스트</p>
+                            <div class="test-coverage">
+                                <span>응답시간: < 1.5초</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 성과 섹션 -->
+            <section class="project-section" id="results">
+                <div class="section-header" onclick="toggleGallery('results-gallery')">
+                    <h2>📊 성과 (Results)</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- 성과 이미지 갤러리 -->
+                <div class="image-gallery" id="results-gallery">
+                    <button class="gallery-close" onclick="closeGallery('results-gallery')">×</button>
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide">
+                                <img src="./image/results1.jpg" alt="효율성 그래프" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Efficiency+Graph'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/results2.jpg" alt="커뮤니케이션 개선" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Communication+Improvement'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/results3.jpg" alt="프로젝트 완성도" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=Project+Completion'">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="./image/results4.jpg" alt="사용자 만족도" onerror="this.src='https://via.placeholder.com/800x400/2a2a2a/ffffff?text=User+Satisfaction'">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-prev" onclick="changeSlide('results-gallery', -1)">‹</button>
+                        <button class="gallery-nav gallery-next" onclick="changeSlide('results-gallery', 1)">›</button>
+                    </div>
+                    <div class="gallery-indicators">
+                        <div class="gallery-indicator active" onclick="goToSlide('results-gallery', 0)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('results-gallery', 1)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('results-gallery', 2)"></div>
+                        <div class="gallery-indicator" onclick="goToSlide('results-gallery', 3)"></div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number">35%</div>
+                            <div class="result-label">작업 효율성 향상</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">60%</div>
+                            <div class="result-label">커뮤니케이션 개선</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">90%</div>
+                            <div class="result-label">프로젝트 완성도</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">1.8초</div>
+                            <div class="result-label">평균 응답 시간</div>
+                        </div>
+                    </div>
+                    <div class="results-summary">
+                        <h3>프로젝트 성과 요약</h3>
+                        <p>팀 협업을 위한 프로젝트 관리 애플리케이션을 성공적으로 개발했습니다. 
+                        팀원 간 효율적인 작업 분배와 진행 상황 추적을 통해 프로젝트 완성도를 향상시켰습니다.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="./js/project-detail.js"></script>
+</body>
+</html> 

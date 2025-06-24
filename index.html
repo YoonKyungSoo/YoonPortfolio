@@ -16,53 +16,83 @@
     </div>
 
     <div id="main-content">
-      <div class="main">
-        <nav class="left-main">
-          <div class="timeline">
-            <div class="timeline-text" data-index="0">소개</div>
-            <div class="timeline-text" data-index="1">경력</div>
-            <div class="timeline-text" data-index="2">프로젝트</div>
-          </div>
-        </nav>
-
-        <div class="right-main">
-          <section class="content-section" id="section0">
-            <h2>소개</h2>
-            <p>안녕하세요, 저는 기획자의 사고를 가진 개발자 윤입니다.</p>
-          </section>
-
-          <section class="content-section" id="section1">
-            <h2>경력</h2>
-            <p>다양한 프로젝트와 팀 협업 경험이 있습니다.</p>
-          </section>
-
-          <section class="content-section" id="section2">
-            <h2>프로젝트</h2>
-            <div class="project-tabs">
-              <button class="tab-btn active" data-project="0">
-                프로젝트 1
-              </button>
-              <button class="tab-btn" data-project="1">프로젝트 2</button>
-              <button class="tab-btn" data-project="2">프로젝트 3</button>
-              <button class="tab-btn" data-project="3">프로젝트 4</button>
-            </div>
-            <div class="project-content active" data-project="0">
-              <p>프로젝트 1 상세 내용이 들어갑니다.</p>
-            </div>
-            <div class="project-content" data-project="1">
-              <p>프로젝트 2 상세 내용이 들어갑니다.</p>
-            </div>
-            <div class="project-content" data-project="2">
-              <p>프로젝트 3 상세 내용이 들어갑니다.</p>
-            </div>
-            <div class="project-content" data-project="3">
-              <p>프로젝트 4 상세 내용이 들어갑니다.</p>
-            </div>
-          </section>
+      <!-- 헤더 섹션 -->
+      <section class="header-section">
+        <div class="header-quote">
+          <strong>실력 없는 기획자는 좋지 못한 기획자</strong>라고 생각합니다.<br>
+          개발로써의 지식을 쌓고 <strong>진정한 기획자</strong>로 나아가고 싶습니다.
         </div>
-      </div>
+        <div class="scroll-indicator">↓ 스크롤하여 프로젝트를 확인하세요</div>
+      </section>
+
+      <!-- 포트폴리오 섹션 -->
+      <section class="portfolio-section">
+        <div class="portfolio-container">
+          <div class="portfolio-list">
+            <!-- 프로젝트 1 -->
+            <div class="portfolio-item" data-project="1">
+              <div class="portfolio-image">
+                <img src="./image/project1.jpg" alt="프로젝트 1" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/ffffff?text=Project+1'">
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">GreenWay (Smart Mobility Platform)</h3>
+                <p class="portfolio-info">React • Node.js • MongoDB • AWS</p>
+                <p class="portfolio-description">
+                  사용자 경험을 최우선으로 한 온라인 쇼핑몰 플랫폼입니다. 
+                  반응형 디자인과 직관적인 UI/UX로 사용자 만족도를 극대화했습니다.
+                </p>
+              </div>
+            </div>
+
+            <!-- 프로젝트 2 -->
+            <div class="portfolio-item" data-project="2">
+              <div class="portfolio-image">
+                <img src="./image/project2.jpg" alt="프로젝트 2" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/ffffff?text=Project+2'">
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">BathDream (밭드림)</h3>
+                <p class="portfolio-info">Vue.js • Express • PostgreSQL • Docker</p>
+                <p class="portfolio-description">
+                  팀 협업을 위한 프로젝트 관리 애플리케이션입니다. 
+                  실시간 업데이트와 효율적인 작업 분배 시스템을 구현했습니다.
+                </p>
+              </div>
+            </div>
+
+            <!-- 프로젝트 3 -->
+            <div class="portfolio-item" data-project="3">
+              <div class="portfolio-image">
+                <img src="./image/project3.jpg" alt="프로젝트 3" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/ffffff?text=Project+3'">
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">애니멀 플레이스 (Animal Place)</h3>
+                <p class="portfolio-info">Python • TensorFlow • FastAPI • Redis</p>
+                <p class="portfolio-description">
+                  자연어 처리를 활용한 지능형 챗봇 시스템입니다. 
+                  머신러닝 모델을 통한 정확한 응답과 개인화된 서비스를 제공합니다.
+                </p>
+              </div>
+            </div>
+
+            <!-- 프로젝트 4 -->
+            <div class="portfolio-item" data-project="4">
+              <div class="portfolio-image">
+                <img src="./image/project4.jpg" alt="프로젝트 4" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/ffffff?text=Project+4'">
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">KH LEAGUE</h3>
+                <p class="portfolio-info">D3.js • Angular • Python • Elasticsearch</p>
+                <p class="portfolio-description">
+                  대용량 데이터를 시각적으로 표현하는 대시보드입니다. 
+                  실시간 데이터 분석과 인터랙티브 차트를 통해 인사이트를 제공합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    <!-- 문선영은 바보다 키키 -->
+
     <script src="./js/index.js"></script>
   </body>
 </html>
