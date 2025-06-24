@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발 상세 - E-Commerce Platform</title>
+    <link rel="stylesheet" href="./css/project-detail.css">
+    <style>
+        .detail-page {
+            min-height: 100vh;
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+        
+        .detail-header h1 {
+            color: #4a90e2;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .detail-header p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+        
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .detail-slider {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slider-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .slider-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        
+        .slider-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-nav:hover {
+            background: rgba(74, 144, 226, 0.8);
+        }
+        
+        .slider-prev {
+            left: 10px;
+        }
+        
+        .slider-next {
+            right: 10px;
+        }
+        
+        .slider-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .slider-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-indicator.active {
+            background: #4a90e2;
+        }
+        
+        .detail-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .detail-info h2 {
+            color: #4a90e2;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+        
+        .detail-info p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .detail-info ul {
+            color: #b0b0b0;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-info li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+        
+        .tech-stack h3 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: #4a90e2;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .code-example {
+            margin-top: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #4a90e2;
+        }
+        
+        .code-example h4 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+        
+        .code-example pre {
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-btn:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .detail-slider {
+                height: 300px;
+            }
+            
+            .detail-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.close()">← 닫기</button>
+    
+    <div class="detail-page">
+        <div class="detail-container">
+            <div class="detail-header">
+                <h1 id="feature-title">개발 상세</h1>
+                <p id="feature-subtitle">E-Commerce Platform 개발 과정</p>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-slider">
+                    <div class="slider-container">
+                        <div class="slider-slides" id="slider-slides">
+                            <!-- 이미지들이 동적으로 로드됩니다 -->
+                        </div>
+                        <button class="slider-nav slider-prev" onclick="changeSliderSlide(-1)">‹</button>
+                        <button class="slider-nav slider-next" onclick="changeSliderSlide(1)">›</button>
+                    </div>
+                    <div class="slider-indicators" id="slider-indicators">
+                        <!-- 인디케이터들이 동적으로 생성됩니다 -->
+                    </div>
+                </div>
+                
+                <div class="detail-info">
+                    <h2 id="info-title">기능 설명</h2>
+                    <div id="info-content">
+                        <!-- 내용이 동적으로 로드됩니다 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL 파라미터에서 기능 정보 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const feature = urlParams.get('feature') || 'product-management';
+        
+        let currentSlide = 0;
+        let slides = [];
+        
+        // 기능별 데이터
+        const featureData = {
+            'product-management': {
+                title: '상품 관리 시스템',
+                subtitle: '관리자 페이지를 통한 상품 등록, 수정, 삭제 기능',
+                images: [
+                    './image/dev-product1.jpg',
+                    './image/dev-product2.jpg',
+                    './image/dev-product3.jpg',
+                    './image/dev-product4.jpg'
+                ],
+                content: `
+                    <p><strong>상품 관리 시스템</strong></p>
+                    <p>관리자가 효율적으로 상품을 관리할 수 있는 시스템을 구축했습니다. 
+                    직관적인 인터페이스와 강력한 기능을 통해 상품 등록부터 판매까지 모든 과정을 관리할 수 있습니다.</p>
+                    
+                    <p><strong>주요 기능</strong></p>
+                    <ul>
+                        <li>상품 등록 및 수정</li>
+                        <li>카테고리 관리</li>
+                        <li>재고 관리</li>
+                        <li>가격 설정 및 할인 관리</li>
+                        <li>상품 이미지 업로드</li>
+                        <li>상품 검색 및 필터링</li>
+                    </ul>
+                    
+                    <div class="tech-stack">
+                        <h3>사용 기술</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Multer</span>
+                            <span class="tech-tag">AWS S3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>상품 등록 API 예시</h4>
+                        <pre>
+// POST /api/products
+{
+  "name": "상품명",
+  "description": "상품 설명",
+  "price": 29000,
+  "category": "전자제품",
+  "stock": 100,
+  "images": ["image1.jpg", "image2.jpg"]
+}
+                        </pre>
+                    </div>
+                `
+            },
+            'authentication': {
+                title: '사용자 인증',
+                subtitle: 'JWT 기반 로그인/회원가입 시스템',
+                images: [
+                    './image/dev-auth1.jpg',
+                    './image/dev-auth2.jpg',
+                    './image/dev-auth3.jpg',
+                    './image/dev-auth4.jpg'
+                ],
+                content: `
+                    <p><strong>사용자 인증 시스템</strong></p>
+                    <p>JWT(JSON Web Token)를 활용한 안전하고 효율적인 사용자 인증 시스템을 구현했습니다. 
+                    로그인, 회원가입, 비밀번호 재설정 등 모든 인증 관련 기능을 제공합니다.</p>
+                    
+                    <p><strong>주요 기능</strong></p>
+                    <ul>
+                        <li>이메일/비밀번호 로그인</li>
+                        <li>소셜 로그인 (Google, Facebook)</li>
+                        <li>회원가입 및 이메일 인증</li>
+                        <li>비밀번호 재설정</li>
+                        <li>JWT 토큰 기반 인증</li>
+                        <li>로그인 상태 유지</li>
+                    </ul>
+                    
+                    <div class="tech-stack">
+                        <h3>사용 기술</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">bcrypt</span>
+                            <span class="tech-tag">Passport.js</span>
+                            <span class="tech-tag">Nodemailer</span>
+                            <span class="tech-tag">OAuth 2.0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>JWT 토큰 생성 예시</h4>
+                        <pre>
+const jwt = require('jsonwebtoken');
+
+const generateToken = (userId) => {
+  return jwt.sign(
+    { userId },
+    process.env.JWT_SECRET,
+    { expiresIn: '24h' }
+  );
+};
+                        </pre>
+                    </div>
+                `
+            },
+            'payment': {
+                title: '결제 시스템',
+                subtitle: 'Stripe API 연동을 통한 안전한 결제 처리',
+                images: [
+                    './image/dev-payment1.jpg',
+                    './image/dev-payment2.jpg',
+                    './image/dev-payment3.jpg',
+                    './image/dev-payment4.jpg'
+                ],
+                content: `
+                    <p><strong>결제 시스템</strong></p>
+                    <p>Stripe API를 연동하여 안전하고 신뢰할 수 있는 결제 시스템을 구축했습니다. 
+                    다양한 결제 수단을 지원하며, 실시간 결제 상태 추적이 가능합니다.</p>
+                    
+                    <p><strong>주요 기능</strong></p>
+                    <ul>
+                        <li>신용카드 결제</li>
+                        <li>계좌이체</li>
+                        <li>간편결제 (카카오페이, 네이버페이)</li>
+                        <li>결제 취소 및 환불</li>
+                        <li>결제 내역 조회</li>
+                        <li>부정 결제 방지</li>
+                    </ul>
+                    
+                    <div class="tech-stack">
+                        <h3>사용 기술</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Webhook</span>
+                            <span class="tech-tag">SSL/TLS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>결제 처리 예시</h4>
+                        <pre>
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+const createPaymentIntent = async (amount) => {
+  return await stripe.paymentIntents.create({
+    amount: amount,
+    currency: 'krw',
+    payment_method_types: ['card'],
+  });
+};
+                        </pre>
+                    </div>
+                `
+            },
+            'notifications': {
+                title: '실시간 알림',
+                subtitle: 'Socket.io를 활용한 실시간 주문 상태 업데이트',
+                images: [
+                    './image/dev-notification1.jpg',
+                    './image/dev-notification2.jpg',
+                    './image/dev-notification3.jpg',
+                    './image/dev-notification4.jpg'
+                ],
+                content: `
+                    <p><strong>실시간 알림 시스템</strong></p>
+                    <p>Socket.io를 활용하여 실시간으로 주문 상태를 업데이트하고 사용자에게 알림을 제공하는 시스템을 구현했습니다. 
+                    웹소켓을 통해 양방향 통신이 가능하여 즉각적인 피드백을 제공합니다.</p>
+                    
+                    <p><strong>주요 기능</strong></p>
+                    <ul>
+                        <li>실시간 주문 상태 업데이트</li>
+                        <li>배송 추적 알림</li>
+                        <li>재고 부족 알림</li>
+                        <li>할인 이벤트 알림</li>
+                        <li>채팅 상담</li>
+                        <li>푸시 알림</li>
+                    </ul>
+                    
+                    <div class="tech-stack">
+                        <h3>사용 기술</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>Socket.io 연결 예시</h4>
+                        <pre>
+// 서버 측
+io.on('connection', (socket) => {
+  socket.on('join-order', (orderId) => {
+    socket.join(\`order-\${orderId}\`);
+  });
+  
+  socket.emit('order-updated', {
+    orderId: '12345',
+    status: 'shipped'
+  });
+});
+
+// 클라이언트 측
+const socket = io();
+socket.emit('join-order', '12345');
+socket.on('order-updated', (data) => {
+  console.log('주문 상태 업데이트:', data);
+});
+                        </pre>
+                    </div>
+                `
+            }
+        };
+        
+        // 페이지 초기화
+        function initPage() {
+            const data = featureData[feature];
+            if (!data) return;
+            
+            // 제목 설정
+            document.getElementById('feature-title').textContent = data.title;
+            document.getElementById('feature-subtitle').textContent = data.subtitle;
+            document.getElementById('info-title').textContent = data.title;
+            document.getElementById('info-content').innerHTML = data.content;
+            
+            // 이미지 로드
+            loadImages(data.images);
+        }
+        
+        // 이미지 로드
+        function loadImages(imageUrls) {
+            const slidesContainer = document.getElementById('slider-slides');
+            const indicatorsContainer = document.getElementById('slider-indicators');
+            
+            slidesContainer.innerHTML = '';
+            indicatorsContainer.innerHTML = '';
+            
+            imageUrls.forEach((url, index) => {
+                // 슬라이드 생성
+                const slide = document.createElement('div');
+                slide.className = 'slider-slide';
+                slide.innerHTML = `<img src="${url}" alt="개발 이미지 ${index + 1}" onerror="this.src='https://via.placeholder.com/600x400/2a2a2a/ffffff?text=Development+Image+${index + 1}'">`;
+                slidesContainer.appendChild(slide);
+                
+                // 인디케이터 생성
+                const indicator = document.createElement('div');
+                indicator.className = `slider-indicator ${index === 0 ? 'active' : ''}`;
+                indicator.onclick = () => goToSliderSlide(index);
+                indicatorsContainer.appendChild(indicator);
+            });
+            
+            slides = imageUrls;
+            currentSlide = 0;
+        }
+        
+        // 슬라이드 변경
+        function changeSliderSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 0 && newSlide < slides.length) {
+                goToSliderSlide(newSlide);
+            }
+        }
+        
+        // 특정 슬라이드로 이동
+        function goToSliderSlide(index) {
+            if (index < 0 || index >= slides.length) return;
+            
+            const slidesContainer = document.getElementById('slider-slides');
+            const indicators = document.querySelectorAll('.slider-indicator');
+            
+            currentSlide = index;
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            
+            // 인디케이터 업데이트
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+        }
+        
+        // 키보드 네비게이션
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSliderSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSliderSlide(1);
+            } else if (e.key === 'Escape') {
+                window.close();
+            }
+        });
+        
+        // 터치 스와이프 지원
+        let startX = 0;
+        let endX = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSliderSlide(1); // 왼쪽으로 스와이프
+                } else {
+                    changeSliderSlide(-1); // 오른쪽으로 스와이프
+                }
+            }
+        }
+        
+        // 페이지 로드 시 초기화
+        window.addEventListener('load', initPage);
+    </script>
+</body>
+</html> 
