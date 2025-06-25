@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   portfolioItems.forEach(item => {
     item.addEventListener("click", () => {
       const projectId = item.getAttribute("data-project");
-      // 새 페이지로 이동 (실제 구현 시에는 해당 프로젝트 상세 페이지로)
-      window.open(`./project${projectId}.html`, '_blank');
+      // 기존 창에서 이동하도록 수정
+      window.location.href = `./project${projectId}.html`;
     });
   });
 
