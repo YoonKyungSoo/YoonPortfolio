@@ -48,6 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // 깃허브 버튼 클릭 시 부모 클릭 이벤트 전파 방지
+  document.querySelectorAll('.github-link-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // 기본 동작(깃허브 이동)은 그대로 유지
+    });
+  });
+
   // 스크롤 인디케이터 클릭 시 포트폴리오 섹션으로 스크롤
   const scrollIndicator = document.querySelector(".scroll-indicator");
   const portfolioSection = document.querySelector(".portfolio-section");
