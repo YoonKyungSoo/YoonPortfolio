@@ -101,7 +101,7 @@
 
 - **이메일**: edward4992@naver.com
 - **전화**: 
-- **GitHub**: your-github
+- **GitHub**: https://github.com/YoonKyungSoo
 
 ---
 
