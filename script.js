@@ -454,10 +454,11 @@ const projectData = {
         ]
     },
     
-    'green-way': {
-        title: 'Green Way',
-        subtitle: '사용자 위치 기반 공유 이동수단 정보 서비스',
-        description: '서울시 공유자전거(따릉이, 일레클, 킥고잉)의 실시간 위치와 대여 가능 현황을 제공하는 웹 서비스',
+         'green-way': {
+         title: 'Green Way',
+         subtitle: '사용자 위치 기반 공유 이동수단 정보 서비스',
+         description: '서울시 공유자전거(따릉이, 일레클, 킥고잉)의 실시간 위치와 대여 가능 현황을 제공하는 웹 서비스',
+         videoPath: './video/GreenWayVi.mp4',
         
         overview: {
             title: '01 서비스 개요',
@@ -986,13 +987,25 @@ function showProjectModal(projectId) {
             </div>
             
             <div class="project-detail-content">
-                <!-- 서비스 개요 -->
-                <div class="detail-section">
-                    <h3>${project.overview.title}</h3>
-                    <p>${project.overview.content}</p>
-                    <p><strong>핵심 개념:</strong> ${project.overview.concept}</p>
-                    <p><strong>타겟:</strong> ${project.overview.target}</p>
-                </div>
+                                 <!-- 서비스 개요 -->
+                 <div class="detail-section">
+                     <h3>${project.overview.title}</h3>
+                     <div class="overview-content">
+                         ${project.videoPath ? `
+                             <div class="video-container">
+                                 <video controls poster="${project.posterPath || ''}">
+                                     <source src="${project.videoPath}" type="video/mp4">
+                                     <p>동영상을 지원하지 않는 브라우저입니다.</p>
+                                 </video>
+                             </div>
+                         ` : ''}
+                         <div class="overview-text">
+                             <p>${project.overview.content}</p>
+                             <p><strong>핵심 개념:</strong> ${project.overview.concept}</p>
+                             <p><strong>타겟:</strong> ${project.overview.target}</p>
+                         </div>
+                     </div>
+                 </div>
                 
                 <!-- 시장 분석 -->
                 <div class="detail-section">
