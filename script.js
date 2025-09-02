@@ -887,6 +887,28 @@ const projectData = {
     }
 };
 
+// 경력 기술서 토글 함수
+function toggleExperience() {
+    const details = document.getElementById('experienceDetails');
+    const button = document.querySelector('.experience-toggle-btn');
+    const btnText = button.querySelector('.btn-text');
+    const btnIcon = button.querySelector('.btn-icon');
+    
+    if (details.classList.contains('expanded')) {
+        // 접기
+        details.classList.remove('expanded');
+        button.classList.remove('expanded');
+        btnText.textContent = '자세히 보기';
+        btnIcon.className = 'fas fa-chevron-down btn-icon';
+    } else {
+        // 펼치기
+        details.classList.add('expanded');
+        button.classList.add('expanded');
+        btnText.textContent = '접기';
+        btnIcon.className = 'fas fa-chevron-up btn-icon';
+    }
+}
+
 // DOM이 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
     // 자동 스크롤 기능 - 2초 후 소개 섹션으로 이동
