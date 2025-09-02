@@ -160,7 +160,7 @@ const projectData = {
                 '마이페이지: 개인 정보 관리 및 활동 내역'
             ],
             images: [
-                './image/Animal Place 와이어프레임1.png',
+                './image/Aniaml Place 와이어프레임1.png',
                 './image/Aniaml place 와이어프레임2.png'
             ],
             designProcess: {
