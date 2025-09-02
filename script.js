@@ -383,8 +383,8 @@ const projectData = {
                 '학습 센터: 농업 기술 콘텐츠'
             ],
             images: [
-                '/image/밭드림 와이어프레임1.png',
-                '/image/밭드림 와이어프레임2.png'
+                './image/밭드림 와이어프레임1.png',
+                './image/밭드림 와이어프레임2.png'
             ],
             designProcess: {
                 phase1: '레이아웃 틀 잡기 - 전체 구조 및 네비게이션 설계',
@@ -599,8 +599,8 @@ const projectData = {
                 '검색: 위치 기반 대여소 찾기'
             ],
             images: [
-                '/image/GreenWay 와이어프레임1.png',
-                '/image/Green Way 와이어프레임2.png'
+                './image/GreenWay 와이어프레임1.png',
+                './image/Green Way 와이어프레임2.png'
             ],
             designProcess: {
                 phase1: '레이아웃 틀 잡기 - 전체 구조 및 네비게이션 설계',
@@ -815,8 +815,8 @@ const projectData = {
                 '커뮤니티: 참가자 소통 공간'
             ],
             images: [
-                '/image/KH LEAGUE 와이어프레임1.png',
-                '/image/KH LEAGUE 와이어프레임2.png'
+                './image/KH LEAGUE 와이어프레임1.png',
+                './image/KH LEAGUE 와이어프레임2.png'
             ],
             designProcess: {
                 phase1: '레이아웃 틀 잡기 - 전체 구조 및 네비게이션 설계',
