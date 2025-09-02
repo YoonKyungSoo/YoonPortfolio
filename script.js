@@ -160,8 +160,8 @@ const projectData = {
                 '마이페이지: 개인 정보 관리 및 활동 내역'
             ],
             images: [
-                '/image/Animal Place 와이어프레임1.png',
-                '/image/Aniaml place 와이어프레임2.png'
+                './image/Animal Place 와이어프레임1.png',
+                './image/Aniaml place 와이어프레임2.png'
             ],
             designProcess: {
                 phase1: '레이아웃 틀 잡기 - 전체 구조 및 네비게이션 설계',
