@@ -969,6 +969,13 @@ function showProjectModal(projectId) {
     if (!project) return;
 
     const modalBody = document.getElementById('modal-body');
+    const modalContent = document.querySelector('.modal-content');
+    
+    // 모달이 열릴 때 스크롤을 맨 위로 이동
+    modalBody.scrollTop = 0;
+    if (modalContent) {
+        modalContent.scrollTop = 0;
+    }
     
     modalBody.innerHTML = `
         <div class="project-detail">
@@ -1230,6 +1237,14 @@ function showProjectModal(projectId) {
     
     document.getElementById('project-modal').style.display = 'block';
     
+    // 모달이 표시된 후 스크롤 위치 재확인
+    setTimeout(() => {
+        modalBody.scrollTop = 0;
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
+    }, 10);
+    
     // 차트 생성 (모든 프로젝트)
     setTimeout(() => {
         if (project.benchmarking.comparisonChart) {
@@ -1240,6 +1255,12 @@ function showProjectModal(projectId) {
         }
         if (project.expectedEffects.kpis) {
             createKPIDashboard(project.expectedEffects.kpis);
+        }
+        
+        // 차트 생성 후에도 스크롤 위치 재확인
+        modalBody.scrollTop = 0;
+        if (modalContent) {
+            modalContent.scrollTop = 0;
         }
     }, 100);
 }
