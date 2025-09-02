@@ -1052,6 +1052,302 @@ section {
     font-weight: 500;
 }
 
+/* 와이어프레임 이미지 스타일 */
+.wireframe-images {
+    margin-top: 1.5rem;
+}
+
+.wireframe-images h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wireframe-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.wireframe-image:hover {
+    transform: translateY(-5px);
+}
+
+.wireframe-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 디자인 프로세스 스타일 */
+.design-process {
+    margin-top: 1.5rem;
+}
+
+.design-process h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.process-steps {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 4px solid #2563eb;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+}
+
+.process-step h5 {
+    color: #2563eb;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.process-step p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 사용자 여정 지도 스타일 */
+.user-journey {
+    margin-top: 1.5rem;
+}
+
+.user-journey h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.journey-stages {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.journey-stage {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.journey-stage:hover {
+    transform: translateY(-5px);
+}
+
+.stage-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.stage-content h5 {
+    color: #2563eb;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.stage-content p {
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.stage-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* 경쟁사 비교 차트 스타일 */
+.comparison-chart {
+    margin-top: 1.5rem;
+}
+
+.comparison-chart h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* KPI 대시보드 스타일 */
+.kpi-dashboard {
+    margin-top: 1.5rem;
+}
+
+.kpi-dashboard h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.kpi-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.kpi-item:hover {
+    transform: translateY(-5px);
+}
+
+.kpi-title {
+    color: #1f2937;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.kpi-values {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.kpi-current {
+    color: #6b7280;
+    font-size: 0.8rem;
+}
+
+.kpi-target {
+    color: #2563eb;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.kpi-improvement {
+    color: #10b981;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* 비즈니스 임팩트 스타일 */
+.business-impact {
+    margin-top: 1.5rem;
+}
+
+.business-impact h4 {
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.impact-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.impact-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+}
+
+.impact-item h5 {
+    color: #2563eb;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.impact-item p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
 /* 모바일 반응형 */
 @media (max-width: 768px) {
     .asis-tobe {
@@ -1065,5 +1361,59 @@ section {
     
     .persona-info {
         padding: 1.2rem;
+    }
+    
+    /* 와이어프레임 이미지 모바일 */
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wireframe-image {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    /* 디자인 프로세스 모바일 */
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .process-step {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    /* 사용자 여정 지도 모바일 */
+    .journey-stages {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .journey-stage {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    /* KPI 그리드 모바일 */
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 임팩트 아이템 모바일 */
+    .impact-items {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 차트 컨테이너 모바일 */
+    .chart-container {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .chart-container canvas {
+        width: 100%;
+        height: auto;
     }
 }
