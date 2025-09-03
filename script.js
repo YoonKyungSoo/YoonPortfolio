@@ -242,6 +242,7 @@ const projectData = {
         title: 'BAT DREAM',
         subtitle: '농업 정보 및 식물 관리 종합 플랫폼',
         description: '농업인들을 위한 종합 정보 제공, 식물 관리 도구, 농장 가이드 서비스',
+        videoPath: './video/BatDreamVi.mp4',
         
         overview: {
             title: '01 서비스 개요',
